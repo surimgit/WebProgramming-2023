@@ -1,0 +1,20 @@
+package service;
+
+import java.util.List;
+
+import database.DAO.BoardDAO;
+import database.Entity.BoardEntity;
+import dto.InsertBoardDTO;
+
+public class BoardService {
+	
+	private BoardDAO boardDao = new BoardDAO();
+	
+	public int postBoard(InsertBoardDTO insertBoardDto) {
+		return boardDao.insert(InsertBoardDto);
+	}
+	
+	public List<BoardEntity> getBoardList(){
+		return boardDao.find();
+	}
+}
